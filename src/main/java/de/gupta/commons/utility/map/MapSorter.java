@@ -8,9 +8,14 @@ import java.util.TreeMap;
 
 public final class MapSorter
 {
-	public static <V> SortedMap<LocalDate, V> sortMapByLocalDateKey(final Map<LocalDate, V> map)
+	public static <V> SortedMap<LocalDate, V> sortMapWithLocalDateKey(final Map<LocalDate, V> map)
 	{
 		return sortMapByKey(map, Comparator.naturalOrder());
+	}
+
+	public static <V> SortedMap<LocalDate, V> sortMapInReverseWithLocalDateKey(final Map<LocalDate, V> map)
+	{
+		return sortMapByKey(map, Comparator.reverseOrder());
 	}
 
 	public static <K, V> SortedMap<K, V> sortMapByKey(final Map<K, V> map, final Comparator<? super K> keyComparator)
