@@ -4,7 +4,7 @@
 
     <groupId>de.gupta</groupId>
     <artifactId>commons-utility</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>24</maven.compiler.source>
@@ -35,7 +35,7 @@
         <developerConnection>
             scm:git:git@github.com:apollo-de/commons-utility.git
         </developerConnection>
-        <tag>v0.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <build>
