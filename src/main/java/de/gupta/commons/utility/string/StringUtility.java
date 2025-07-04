@@ -11,8 +11,13 @@ public final class StringUtility
 		return !text.isEmpty() && Character.isUpperCase(text.charAt(0));
 	}
 
-	private static boolean hasValidJavaClassNameFormat(String domainName)
+	public static boolean hasValidJavaClassNameFormat(String domainName)
 	{
+		if (domainName.isEmpty())
+		{
+			return false;
+		}
+
 		boolean expectLower = true;
 
 		for (int i = 0; i < domainName.length(); i++)
