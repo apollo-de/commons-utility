@@ -19,13 +19,14 @@ public final class StringUtility
 		}
 
 		boolean expectLower = true;
+		boolean hasLowercase = false;
 
 		for (int i = 0; i < domainName.length(); i++)
 		{
 			char c = domainName.charAt(i);
 
-			// Only letters allowed (no special characters or numbers)
-			if (!Character.isLetter(c))
+			// Only ASCII letters allowed (a-z, A-Z)
+			if (!Character.isLetter(c) || c > 127)
 			{
 				return false;
 			}
@@ -50,9 +51,16 @@ public final class StringUtility
 			{
 				// After uppercase, we expect lowercase
 				expectLower = false;
+				hasLowercase = true;
+			}
+			else
+			{
+				hasLowercase = true;
 			}
 		}
 
-		return true;
+		// Valid Java class names should have at least one lowercase letter (camel case)
+		// Special case: a single uppercase letter is also valid
+		return hasLowercase || domainName.length() == 1;
 	}
 }
