@@ -1,8 +1,8 @@
 package de.gupta.commons.utility.string;
 
-public final class StringUtility
+public final class StringFormatUtility
 {
-	private StringUtility()
+	private StringFormatUtility()
 	{
 	}
 

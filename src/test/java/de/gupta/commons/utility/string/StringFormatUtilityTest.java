@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("StringUtility Tests")
-class StringUtilityTest
+class StringFormatUtilityTest
 {
 	private static Stream<Arguments> startsWithUppercaseProvider()
 	{
@@ -61,7 +61,7 @@ class StringUtilityTest
 	@DisplayName("Test if string starts with uppercase letter")
 	void startsWithUppercase(String input, boolean expected, String testDescription)
 	{
-		boolean result = StringUtility.startsWithUppercase(input);
+		boolean result = StringFormatUtility.startsWithUppercase(input);
 		assertThat(result).as(testDescription).isEqualTo(expected);
 	}
 
@@ -70,7 +70,7 @@ class StringUtilityTest
 	@DisplayName("Test if string has valid Java class name format")
 	void hasValidJavaClassNameFormat(String input, boolean expected, String testDescription)
 	{
-		boolean result = StringUtility.hasValidJavaClassNameFormat(input);
+		boolean result = StringFormatUtility.hasValidJavaClassNameFormat(input);
 		assertThat(result).as(testDescription).isEqualTo(expected);
 	}
 }
